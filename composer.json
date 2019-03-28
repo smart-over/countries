@@ -1,0 +1,24 @@
+{
+  "name": "smart-over/countries",
+  "authors": [
+    {
+      "name": "Ömer Kamçılı",
+      "email": "okamcili@smartover.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SmartOver\\Countries\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SmartOver\\Countries\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.1.3",
+    "ext-json": "*",
+    "smart-over/micro-service": "^1.3"
+  }
+}
