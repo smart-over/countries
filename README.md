@@ -15,3 +15,8 @@ $app->register(\SmartOver\Countries\CountriesServiceProvider::class);
 ```
 php artisan migrate
 ```
+
+### Fetch all countries
+```
+php artisan countries:fetch --show
+```
