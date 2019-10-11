@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateCountryAndCountryTranslateTables
+ */
 class CreateCountryAndCountryTranslateTables extends Migration
 {
     /**
@@ -14,7 +17,8 @@ class CreateCountryAndCountryTranslateTables extends Migration
     public function up()
     {
 
-        Schema::create('country', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
+
             $table->integer('id')->unique()->unsigned();
             $table->string('name', 191)->nullable(false);
             $table->string('alpha2Code', 191)->nullable(true);
@@ -26,19 +30,21 @@ class CreateCountryAndCountryTranslateTables extends Migration
             $table->string('numericCode', 3)->nullable(true);
             $table->boolean('isDeleted')->nullable(false)->default(0);
 
-            $table->index('id', 'id_index');
-            $table->index('name', 'name_index');
-            $table->index(['id', 'name'], 'id_name_index');
+            $table->index(['id', 'isDeleted'], 'countries_index_74439948577743');
+
         });
 
-        Schema::create('countryTranslate', function (Blueprint $table) {
+        Schema::create('countryTranslates', function (Blueprint $table) {
+
             $table->increments('id')->unsigned();
             $table->integer('countryId')->unsigned();
             $table->string('langCode');
             $table->string('translateName')->nullable(true);
 
-            $table->index(['countryId', 'langCode'], 'country_id_and_lang_code_index');
-            $table->foreign('countryId', 'country_id_foreign')->references('id')->on('country')->onDelete('cascade');
+            $table->index(['countryId', 'langCode'], 'country_translates_index_449300594');
+            $table->foreign('countryId', 'country_translates_foreign_660499382851')
+                ->references('id')->on('country')->onDelete('cascade');
+
         });
     }
 

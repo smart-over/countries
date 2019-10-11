@@ -14,7 +14,7 @@ class CountryTranslate extends BaseMultiLangModel
     /**
      * @var string
      */
-    protected $table = 'countryTranslate';
+    protected $table = 'countryTranslates';
 
     /**
      * @var array

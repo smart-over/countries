@@ -36,7 +36,7 @@ class Country extends BaseMultiLangModel
     /**
      * @var string
      */
-    protected $table = 'country';
+    protected $table = 'countries';
 
     /**
      * @var array
