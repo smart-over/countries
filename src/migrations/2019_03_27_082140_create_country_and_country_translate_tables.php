@@ -43,7 +43,7 @@ class CreateCountryAndCountryTranslateTables extends Migration
 
             $table->index(['countryId', 'langCode'], 'country_translates_index_449300594');
             $table->foreign('countryId', 'country_translates_foreign_660499382851')
-                ->references('id')->on('country')->onDelete('cascade');
+                ->references('id')->on('countries')->onDelete('cascade');
 
         });
     }
