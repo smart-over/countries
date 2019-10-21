@@ -56,8 +56,8 @@ class CreateCountryAndCountryTranslateTables extends Migration
     public function down()
     {
 
-        Schema::drop('countryTranslate');
-        Schema::drop('country');
+        Schema::drop('countryTranslates');
+        Schema::drop('countries');
 
     }
 }
